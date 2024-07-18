@@ -1,10 +1,12 @@
-`git init`
-`git add .`
-`git commit -m "initial commit"`
-`git remote add origin repo-url`
-`git push -u origin master`
+## Snippet
+For this part of the course, the focus it shifted towards the **backend**.  \
+We will implement a simple REST API in **Node.js** by using the **Express** library. \
+The application's data will be stored in a **MongoDB** database. \
+We will deploy our application to the internet through **Render**. \
+**Link:** https://fullstackopen-zwjr.onrender.com
 
-`git config --global --unset http.proxy`
-`git config --global --unset https.proxy`
-
-link: https://fullstackopen-zwjr.onrender.com
+## Notes
+### Add npm run scripts to `package.json` file
+`"build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../frontend && npm run build && @powershell Copy-Item dist -Recurse ../backend"` \
+`"deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"` \
+`"lint": "eslint ."`

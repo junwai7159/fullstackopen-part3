@@ -7,6 +7,13 @@ We will deploy our application to the internet through **Render**. \
 
 ## Notes
 ### Add npm run scripts to `package.json` file
-`"build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../frontend && npm run build && @powershell Copy-Item dist -Recurse ../backend"` \
-`"deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"` \
-`"lint": "eslint ."`
+```
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../frontend && npm run build && @powershell Copy-Item dist -Recurse ../backend",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
+    "lint": "eslint ."
+  }
+```
